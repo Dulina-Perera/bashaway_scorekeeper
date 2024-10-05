@@ -47,7 +47,7 @@ jobs:
 
       - name: Download and extract question files
         run: |
-          curl -L "${{ github.event.client_payload.question_url }}?${{ secrets.QUESTION_CONTAINER_SAS_TOKEN }}" -o question.zip
+          curl -L "${{ github.event.client_payload.question_url }}" -o question.zip
           unzip question.zip -d question
 
       - name: Clean unnecessary files
