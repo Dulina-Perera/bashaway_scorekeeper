@@ -88,9 +88,3 @@ jobs:
 
       - name: Run tests
         run: cd submission && pnpm dlx jest@29.6.2
-
-      - name: Update score
-        run: node src/index.js --script update-score --submission-id "${{ github.event.client_payload.submission_id }}"
-        env:
-          BASHAWAY_SERVER_URL: ${{ secrets[format('BASHAWAY_{0}_SERVER_URL', inputs.application_environment)] }}
-          BASHAWAY_SERVER_API_KEY: ${{ secrets[format('BASHAWAY_{0}_SERVER_API_KEY', inputs.application_environment)] }}
